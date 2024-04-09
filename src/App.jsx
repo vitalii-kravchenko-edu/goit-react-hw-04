@@ -26,6 +26,7 @@ function App() {
     const fetchImages = async () => {
       try {
         setIsLoading(true);
+        if (page === 1) setImages(null);
         const data = await requestImages(query, page);
         setImages((prevImages) =>
           prevImages !== null ? [...prevImages, ...data] : [...data]
@@ -41,6 +42,7 @@ function App() {
 
   const onSetSearchQuery = (searchQuery) => {
     setQuery(searchQuery);
+    setPage(1);
   };
 
   const onAddPage = () => {
