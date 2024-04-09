@@ -3,7 +3,7 @@ import toast from "react-hot-toast";
 const SearchBar = ({ onSubmit }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
-    const searchQuery = e.currentTarget.elements.searchQuery.value;
+    const searchQuery = e.currentTarget.elements.searchQuery.value.trim();
 
     if (!searchQuery) {
       toast.error("Please enter a search query");

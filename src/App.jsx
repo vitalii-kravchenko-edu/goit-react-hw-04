@@ -81,7 +81,7 @@ function App() {
       {isLoading && <Loader />}
       {isError && <ErrorMessage />}
       {images && <ImageGallery images={images} openModal={openModal} />}
-      {images && <LoadMoreBtn onAddPage={onAddPage} />}
+      {images && images.length !== 0 && <LoadMoreBtn onAddPage={onAddPage} />}
       <ImageModal
         isOpen={isModalOpen}
         onRequestClose={closeModal}
